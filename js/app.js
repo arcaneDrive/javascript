@@ -80,7 +80,7 @@ const checkConfirmPassword = () => {
 
 // check if is valid email
 const isEmailValid = (email) => {
-    
+    // handling the regularExpression 😁
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     return re.test(email);
 };
@@ -141,7 +141,7 @@ form.addEventListener('submit', function (e) {
     }
 });
 
-
+// adding delay for when the user stops writing to give error message
 const debounce = (fn, delay = 500) => {
     let timeoutId;
     return (...args) => {
