@@ -3,6 +3,7 @@ const emailEl = document.querySelector('#email');
 const passwordEl = document.querySelector('#password');
 const confirmPasswordEl = document.querySelector('#confirm-password');
 
+
 const form = document.querySelector('#signup');
 
 
@@ -183,7 +184,14 @@ function myFunction() {
         return response.json(); // Parse the JSON from the response
     })
     .then(data => {
-        console.log(data); // Handle the data
+        const apidata = document.getElementById("tag");
+
+        function updatedata(newcontent) {
+            apidata.innerHTML = newcontent;
+        }
+
+        // Pass the fetched data to the updatedata function
+        updatedata(`<strong>Todo:</strong> ${data.title}`);
     })
     .catch(error => {
         console.error('There was a problem with the fetch operation:', error);
